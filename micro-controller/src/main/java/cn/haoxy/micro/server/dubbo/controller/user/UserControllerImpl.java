@@ -37,6 +37,8 @@ public class UserControllerImpl implements UserController {
     public Result login(@RequestBody LoginReq loginReq, HttpServletResponse httpRsp) {
         UserEntity userEntity = userService.login(loginReq);
         doLoginSuccess(userEntity, httpRsp);
+
+        System.out.println("hello ...");
         return Result.newSuccessResult(userEntity);
     }
 
